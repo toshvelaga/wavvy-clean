@@ -1,0 +1,12 @@
+@font-face {
+	font-family: "Poppins-Regular";
+	src: local("Poppins-Regular"),
+		url("./fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+html,
+body {
+	background-color: #121212;
+	margin: 0;
+	font-family: "Poppins-Regular", sans-serif;
+}

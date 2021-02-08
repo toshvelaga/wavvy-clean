@@ -1,0 +1,23 @@
+.round-button {
+	border-radius: 50%;
+	background-color: transparent;
+	/* background-color: #333333; */
+	color: white;
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid gray;
+	/* margin: 0 5px; */
+	margin-right: 10px;
+	border: none;
+	outline: none;
+	/* background: none; */
+}
+
+.round-button:hover {
+	/* background-color: #007cf3; */
+	/* background-color: #6203ef; */
+	background-color: #08c803;
+	cursor: pointer;
+	/* border: 1px solid #007cf3; */
+	/* background: none; */
+}

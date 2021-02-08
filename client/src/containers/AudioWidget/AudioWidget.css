@@ -1,0 +1,68 @@
+.episode-image-container {
+	/* display: inline-block; */
+	margin-right: 1rem;
+	width: 25%;
+}
+
+.episode-info-container {
+	/* display: inline-block; */
+	width: 70%;
+}
+
+.skip-buttons {
+	background: transparent;
+	border: none;
+	color: #fff;
+}
+
+.speed-button {
+	background: none;
+	color: #535353;
+	border: 1px solid #535353;
+	border-radius: 5px;
+	padding: 2px 10px;
+	font: inherit;
+	cursor: pointer;
+	font-size: 12px;
+	/* margin-right: 5px; */
+	outline: none;
+	vertical-align: top;
+	margin-top: 24px;
+	margin-left: 0.5rem;
+}
+
+.skip-buttons {
+	vertical-align: top;
+	margin-top: 24px;
+	margin-left: 0.5rem;
+}
+
+.audio-player-controls {
+	/* max-width: 300px; */
+	display: flex;
+	/* flex-wrap: wrap; */
+}
+
+.embed-audio-container {
+	height: 200px;
+	/* border: 1px solid grey; */
+	background-color: #1b1b1b;
+	border-radius: 5px;
+	margin: auto;
+	display: flex;
+	width: 100%;
+}
+
+/* @media only screen and (max-width: 1000px) {
+	.podcast-audio-container {
+		width: 80%;
+		margin: auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.podcast-audio-container {
+		width: 90%;
+		margin: auto;
+	}
+} */

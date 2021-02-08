@@ -1,0 +1,43 @@
+.modal-button {
+	background-color: transparent;
+	border: 1px solid #fff;
+	padding: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-right: 5px;
+	margin-left: 5px;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.modal-button:hover {
+	/* border: 1px solid #f00;
+    color: #f00; */
+	cursor: pointer;
+}
+
+.podcasts-lists {
+	width: 60%;
+	margin: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+	.podcasts-lists {
+		width: 90%;
+		margin: auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.podcasts-lists {
+		width: 95%;
+		margin: auto;
+	}
+}
+
+/* @media only screen and (max-width: 600px) {
+	.podcast-image {
+		width: 5rem;
+		height: 5rem;
+	}
+} */

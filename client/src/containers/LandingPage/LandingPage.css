@@ -1,0 +1,38 @@
+.landing-page-podcast-cover {
+	width: 175px;
+	height: 175px;
+	/* border-radius: 30px; */
+	/* border: 2px solid#fff; */
+	border-radius: 50%;
+	margin-top: 30px;
+}
+
+.podcast-icons {
+	width: 65px;
+	height: 65px;
+	margin: 5px;
+}
+
+.podcast-icons:hover {
+	cursor: pointer;
+}
+
+.social-media-icons {
+	width: 65px;
+	height: 65px;
+	margin: 5px;
+}
+
+.social-media-icons:hover {
+	cursor: pointer;
+}
+
+.support-icons {
+	width: 65px;
+	height: 65px;
+	margin: 5px;
+}
+
+.support-icons:hover {
+	cursor: pointer;
+}

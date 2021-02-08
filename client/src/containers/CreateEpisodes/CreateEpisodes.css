@@ -1,0 +1,21 @@
+.create-episode-container {
+	width: 65%;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #f6f6f6;
+	/* box-shadow: 0 0 20px 0 rgb(222, 223, 224); */
+}
+
+@media only screen and (max-width: 1000px) {
+	.create-episode-container {
+		width: 80%;
+		margin: auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.create-episode-container {
+		width: 90%;
+		margin: auto;
+	}
+}

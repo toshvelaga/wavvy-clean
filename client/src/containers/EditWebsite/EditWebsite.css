@@ -1,0 +1,24 @@
+.edit-website-container {
+	width: 65%;
+	margin: auto;
+	margin-bottom: 4rem;
+	padding: 20px;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	/* background-color: #1b1b1b; */
+	/* box-shadow: 0 0 5px 0 rgb(222, 223, 224); */
+}
+
+@media only screen and (max-width: 1000px) {
+	.edit-website-container {
+		width: 80%;
+		margin: auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.edit-website-container {
+		width: 90%;
+		margin: auto;
+	}
+}

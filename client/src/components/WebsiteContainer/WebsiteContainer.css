@@ -1,0 +1,7 @@
+.podcast-container {
+	height: 200px;
+	background-color: #1b1b1b;
+	border-radius: 5px;
+	margin: 20px auto;
+	display: flex;
+}

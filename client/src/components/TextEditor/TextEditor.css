@@ -1,0 +1,12 @@
+.ck-editor__editable {
+	min-height: 120px;
+}
+
+.ck-editor__editable:focus {
+	border: 2px solid black !important;
+}
+
+.text-editor-container {
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
