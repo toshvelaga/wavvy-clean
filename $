@@ -1,8 +1,0 @@
-* remote origin
-  Fetch URL: https://github.com/toshvelaga/wavvy-clean.git
-  Push  URL: https://github.com/toshvelaga/wavvy-clean.git
-  HEAD branch: main
-  Remote branch:
-    main new (next fetch will store in remotes/origin)
-  Local ref configured for 'git push':
-    main pushes to main (local out of date)
