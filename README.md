@@ -8,18 +8,18 @@ Frontend tech stack:
 
 - create-react-app
 - React JS
-- CSS,
-- Redux,
-- React Router,
+- CSS
+- Redux
+- React Router
 - React Icons
 
 Backend tech stack:
 
 - Node
 - Express
-- PostgresSQL,
-- Nodemailer,
-- AWS SDK,
+- PostgresSQL
+- Nodemailer
+- AWS SDK
 
 Toast Notifications: https://jossmac.github.io/react-toast-notifications/
 

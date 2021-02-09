@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../src/components/Navbar/Navbar";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -30,20 +29,10 @@ import Website from "./website/Website/Website";
 import LandingPage from "./containers/LandingPage/LandingPage";
 import WebsiteSettings from "./containers/WebsiteSettings/WebsiteSettings";
 import EditWebsite from "./containers/EditWebsite/EditWebsite";
-import ReactGA from "react-ga";
 import Terms from "./website/Terms/Terms";
 import Privacy from "./website/Privacy/Privacy";
 import LandingPageSocial from "./containers/LandingPage/LandingPageSocial";
 import LandingPageSupport from "./containers/LandingPage/LandingPageSupport";
-
-const trackingId = process.env.REACT_APP_TRACKING_ID; // Replace with your Google Analytics tracking ID
-ReactGA.initialize(trackingId);
-
-// ReactGA.set({
-// 	userId: auth.currentUserId(),
-// 	// any data that is relevant to the user session
-// 	// that you would like to track with google analytics
-// });
 
 function App(props) {
 	useEffect(() => {

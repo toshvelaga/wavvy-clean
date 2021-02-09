@@ -4,9 +4,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./store/store";
-import "./fonts/Poppins-Regular.ttf";
 import "./App.css";
-import "./index.css";
 
 ReactDOM.render(
 	<React.StrictMode>
