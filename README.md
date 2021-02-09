@@ -1,12 +1,25 @@
 # Wavvy
 
-Wavvy is full stack software project that allows users to host podcasts.
+Wavvy is a full stack software project that allows users to host podcasts. Software allows users to manage their podcasts and episodes, create an RSS feed for itunes/spotify, and create a personalized website to share social media links. Software is in dark mode by default.
 
-Frontend tech stack: CRA, React JS, CSS, Redux, React Router, React Icons
+## Tech/framework used
 
-Backend tech stack: Node, Express, PostgresSQL, Nodemailer, AWS,
+Frontend tech stack:
 
-In the root directory create a .env file with the values from env.txt
+- create-react-app
+- React JS
+- CSS,
+- Redux,
+- React Router,
+- React Icons
+
+Backend tech stack:
+
+- Node
+- Express
+- PostgresSQL,
+- Nodemailer,
+- AWS SDK,
 
 Toast Notifications: https://jossmac.github.io/react-toast-notifications/
 
@@ -34,6 +47,14 @@ to run the Node JS server:
 $ node index.js
 ```
 
+In the root directory create a .env file with the values from env.txt
+
+## Contribute
+
 Feel free to use code however you would like.
 
 If you have any questions feel free to email me at toshvelaga@gmail.com
+
+## License
+
+MIT © Tosh Velaga
