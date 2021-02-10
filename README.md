@@ -6,12 +6,12 @@ Wavvy is a full stack software project that allows users to host podcasts. Softw
 
 Frontend tech stack:
 
-- create-react-app
 - React JS
 - CSS
 - Redux
 - React Router
 - React Icons
+- React Toast Notifications
 
 Backend tech stack:
 
@@ -21,13 +21,15 @@ Backend tech stack:
 - Nodemailer
 - AWS SDK
 
-Toast Notifications: https://jossmac.github.io/react-toast-notifications/
+For more information on React Toast Notifications: https://jossmac.github.io/react-toast-notifications/
 
-Payments: https://stripe.com/docs/billing/subscriptions/overview
+React Icons: https://react-icons.github.io/react-icons/
+
+Frontend of the app is in the client folder. Under src directory store folder contains all of the redux actions and reducers. The website folder is responsible for building the landing page.
+
+Edit index.js to change the server connection. Middleware, routes, and utils directories contain server code for API endpoints.
 
 Hosted on Heroku: Folder structure is set up specifically to be compatible with Heroku
-
-Frontend of the app is in the client folder. Edit index.js to change the server connection. Middleware, routes, and utils directories contain server code for API endpoints.
 
 Production site is deployed to https://www.wavvy.us/
 
