@@ -33,6 +33,8 @@ Hosted on Heroku: Folder structure is set up specifically to be compatible with 
 
 Production site is deployed to https://www.wavvy.us/
 
+Loom demo: https://www.loom.com/share/b46061898fc54d15870cd734b96886a6
+
 ## Installation
 
 To run this project, install it locally using npm:
