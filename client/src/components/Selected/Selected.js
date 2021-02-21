@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Select from 'react-select';
-import './Selected.css';
+import React, { Component } from "react";
+import Select from "react-select";
+import "./Selected.css";
 
 // react-select: https://www.npmjs.com/package/react-select
 
@@ -9,7 +9,7 @@ function Selected(props) {
     <>
       <div className="selected-container">
         <label
-          style={{ display: 'block', marginBottom: '8px', color: props.color }}
+          style={{ display: "block", marginBottom: "8px", color: props.color }}
           className="label"
         >
           {props.label}
@@ -18,16 +18,17 @@ function Selected(props) {
           value={props.value}
           onChange={props.onChange}
           options={props.options}
-					// defaultValue={props.defaultValue}
-					// defaultInputValue={props.defaultInputValue}
+          // defaultValue={props.defaultValue}
+          // defaultInputValue={props.defaultInputValue}
           theme={(theme) => ({
-					  ...theme,
-					  // borderRadius: 0,
-					  colors: {
-					    ...theme.colors,
-					    // primary25: "hotpink",
-					    primary: '#121212',
-					  },
+            ...theme,
+            border: "1px solid black",
+            // borderRadius: 0,
+            colors: {
+              ...theme.colors,
+              // primary25: "hotpink",
+              primary: "#121212",
+            },
           })}
         />
       </div>

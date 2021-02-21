@@ -2,8 +2,5 @@ html,
 body {
   background-color: #fff;
   margin: 0;
-}
-
-html {
-  height: 100%;
+  font-family: sans-serif;
 }
