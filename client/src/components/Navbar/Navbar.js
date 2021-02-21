@@ -9,9 +9,6 @@ import Logout from "../Logout/Logout";
 import { SidebarData } from "./SidebarData";
 import SideNavbar from "./SideNavbar";
 
-// React Icons: https://react-icons.github.io/
-// Navbar: https://www.youtube.com/watch?v=CXa0f4-dWi4&ab_channel=BrianDesign
-
 function Navbar(props) {
   const [sidebar, setSidebar] = useState(false);
 
@@ -36,21 +33,20 @@ function Navbar(props) {
         id="top-navbar"
       >
         <span className="user-circle-icon">
-          <FaIcons.FaUserCircle size={30} />
+          <FaIcons.FaUserCircle color="#fff" size={30} />
         </span>
-
         <span className="notification-icon">
-          <FaIcons.FaBell size={20} />
+          <FaIcons.FaBell color="#fff" size={20} />
         </span>
         <span onClick={showSidebar} className="hamburger-icon">
-          <FaIcons.FaBars size={20} />
+          <FaIcons.FaBars color="#fff" size={20} />
         </span>
       </div>
       {/* fixed side navbar with buttons */}
       <SideNavbar />
       {/* Mobile navbar overlay for small screen size */}
 
-      <IconContext.Provider value={{ color: "black" }}>
+      <IconContext.Provider value={{ color: "fff" }}>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
