@@ -1,5 +1,9 @@
 html,
 body {
-  background-color: #121212;
+  background-color: #fff;
   margin: 0;
+}
+
+html {
+  height: 100%;
 }

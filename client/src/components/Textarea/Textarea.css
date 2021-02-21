@@ -1,25 +1,25 @@
 .textarea-container {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 textarea {
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	font-size: 16px;
-	padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 10px;
 }
 
 textarea:focus {
-	outline: none;
-	border: 2px solid #121212 !important;
+  outline: none;
+  border: 1px solid #121212 !important;
 }
 
 .textarea-dark:focus {
-	border: none !important;
+  border: none !important;
 }
 
 .label {
-	font-size: 16px;
+  font-size: 16px;
 }
