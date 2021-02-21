@@ -13,9 +13,15 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
-  background-color: #2a2a2a;
+  /* background-color: #2a2a2a; */
+  background-color: #242424;
   color: #fff;
 }
+
+/* input:hover {
+  outline: none !important;
+  border: 0.2px solid #fff;
+} */
 
 input:focus {
   outline: none !important;
