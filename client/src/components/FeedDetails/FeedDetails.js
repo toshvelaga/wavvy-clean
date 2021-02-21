@@ -1,8 +1,8 @@
-import React from "react";
-import "./FeedDetails.css";
+import React from 'react';
+import './FeedDetails.css';
 
 function FeedDetails() {
-	return <div></div>;
+  return <div />;
 }
 
 export default FeedDetails;

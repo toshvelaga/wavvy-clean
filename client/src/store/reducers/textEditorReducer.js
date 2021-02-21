@@ -1,19 +1,19 @@
-import { TEXT_EDITOR } from "../constants/actionTypes";
+import { TEXT_EDITOR } from '../constants/actionTypes';
 
 const initialState = {
-	description: "",
+  description: '',
 };
 
 const textEditorReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case TEXT_EDITOR:
-			return {
-				...initialState,
-				description: action.description,
-			};
-		default:
-			return state;
-	}
+  switch (action.type) {
+    case TEXT_EDITOR:
+      return {
+        ...initialState,
+        description: action.description,
+      };
+    default:
+      return state;
+  }
 };
 
 export default textEditorReducer;

@@ -1,3 +1,3 @@
 export default function createCurrentDate() {
-	return new Date().toUTCString();
+  return new Date().toUTCString();
 }
