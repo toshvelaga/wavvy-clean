@@ -4,16 +4,20 @@
 }
 
 textarea {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
   padding: 10px;
+  background-color: #2a2a2a;
+  border: none;
+  margin-top: 10px;
+  color: #fff;
 }
 
 textarea:focus {
   outline: none;
-  border: 1px solid #121212 !important;
+  border: 1px solid #1058bf !important;
 }
 
 .textarea-dark:focus {

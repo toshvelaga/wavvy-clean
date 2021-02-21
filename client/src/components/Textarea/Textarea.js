@@ -5,7 +5,7 @@ function Textarea(props) {
   return (
     <>
       <div className="textarea-container">
-        <label>{props.label}</label>
+        <label style={{ color: "#fff" }}>{props.label}</label>
         <textarea
           value={props.value}
           onChange={props.onChange}
