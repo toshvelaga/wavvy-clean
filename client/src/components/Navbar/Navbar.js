@@ -34,6 +34,7 @@ function Navbar(props) {
         <span onClick={showSidebar} className="hamburger-icon">
           <FaIcons.FaBars color="#fff" size={20} />
         </span>
+        <div id="centered-dropdown">{props.children}</div>
       </div>
 
       {/* fixed side navbar with buttons */}

@@ -77,11 +77,11 @@ function Settings() {
             paddingTop: "0rem",
           }}
         >
-          <h1>Change Password</h1>
+          <h1 style={{ color: "#fff" }}>Change Password</h1>
         </div>
         <div style={{ marginTop: "1rem" }}>
           <TextInputLabel
-            color="black"
+            color="#fff"
             label="Old Password"
             // placeholder="old password"
             value={oldPassword}
@@ -93,7 +93,7 @@ function Settings() {
         </div>
         <div style={{ marginTop: ".5rem" }}>
           <TextInputLabel
-            color="black"
+            color="#fff"
             label="New Password"
             // placeholder="old password"
             value={newPassword}
@@ -105,7 +105,7 @@ function Settings() {
         </div>
         <div style={{ marginTop: ".5rem" }}>
           <TextInputLabel
-            color="black"
+            color="#fff"
             label="Confirm New Password"
             // placeholder="old password"
             value={confirmNewPassword}

@@ -32,6 +32,14 @@
   margin-left: 5px;
 }
 
+#centered-dropdown {
+  position: relative;
+  width: 800px;
+
+  z-index: 100;
+  overflow: visible;
+}
+
 /* mobile navbar for small screens */
 
 .nav-menu {
