@@ -23,15 +23,8 @@ function Navbar(props) {
   return (
     <>
       {/* sticky top navbar */}
-      {/* {sidebar
-        ? (document.body.style = "background: grey")
-        : (document.body.style = "background: #fff")} */}
-      <div
-        // style={
-        //   sidebar ? { backgroundColor: "grey" } : { backgroundColor: "#fff" }
-        // }
-        id="top-navbar"
-      >
+
+      <div id="top-navbar">
         <span className="user-circle-icon">
           <FaIcons.FaUserCircle color="#fff" size={30} />
         </span>
@@ -42,6 +35,7 @@ function Navbar(props) {
           <FaIcons.FaBars color="#fff" size={20} />
         </span>
       </div>
+
       {/* fixed side navbar with buttons */}
       <SideNavbar />
       {/* Mobile navbar overlay for small screen size */}

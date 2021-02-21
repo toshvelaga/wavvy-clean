@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import RoundButton from '../RoundButton/RoundButton';
-import './PodcastContainer.css';
-import * as MdIcons from 'react-icons/md';
-import axios from 'axios';
-import Modal from 'react-modal';
-import Card from '../Card/Card';
+import React, { useState, useEffect } from "react";
+import RoundButton from "../RoundButton/RoundButton";
+import "./PodcastContainer.css";
+import * as MdIcons from "react-icons/md";
+import axios from "axios";
+import Modal from "react-modal";
+import Card from "../Card/Card";
 
 const customStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: 'black',
-    borderRadius: '5px',
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "black",
+    borderRadius: "5px",
   },
 };
 
 function PodcastContainer(props) {
-  const [num, setNum] = useState('');
+  const [num, setNum] = useState("");
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const headers = { jwt_token: localStorage.token };
@@ -38,17 +38,15 @@ function PodcastContainer(props) {
         }
       });
     return (
-      <p style={{ color: '#fff', marginBottom: '.5em' }}>
-        {num}
-        {' '}
-        episodes published
+      <p style={{ color: "#fff", marginBottom: ".5em" }}>
+        {num} episodes published
       </p>
     );
   };
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    subtitle.style.color = "#f00";
   }
 
   function closeModal() {
@@ -72,17 +70,15 @@ function PodcastContainer(props) {
         </h3>
         <p
           style={{
-					  color: '#fff',
-					  paddingTop: '5px',
-					  paddingBottom: '5px',
+            color: "#fff",
+            paddingTop: "5px",
+            paddingBottom: "5px",
           }}
         >
           This will also delete all episodes associated
-          <br />
-          {' '}
-          with your podcast.
+          <br /> with your podcast.
         </p>
-        <form style={{ float: 'right' }}>
+        <form style={{ float: "right" }}>
           <button className="modal-button" onClick={closeModal}>
             No
           </button>
@@ -96,13 +92,15 @@ function PodcastContainer(props) {
         <img className="podcast-image" src={props.coverImage} />
         <div className="podcast-info">
           <Card title="Delete Podcast" fx={() => openModal()} />
-          <h3 style={{ color: '#fff', marginBottom: '.5em' }}>
+          <h3
+            style={{ color: "#fff", marginTop: "0rem", marginBottom: ".5em" }}
+          >
             {props.podcastName}
           </h3>
           <p
             style={{
-						  color: '#fff',
-						  marginBottom: '.5em',
+              color: "#fff",
+              marginBottom: ".5em",
             }}
           >
             {props.podcastDesc}

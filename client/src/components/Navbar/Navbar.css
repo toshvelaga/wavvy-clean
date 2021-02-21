@@ -43,11 +43,13 @@
   top: 0;
   left: -100%;
   transition: 850ms;
+  background-color: #191919;
 }
 
 .nav-menu.active {
   left: 0;
   transition: 350ms;
+  background-color: #191919;
 }
 
 .nav-text {
@@ -67,6 +69,8 @@
   display: flex;
   align-items: center;
   padding: 0 16px;
+  font-size: 17px;
+  color: #fff;
 }
 
 .nav-text a:hover {
@@ -75,6 +79,7 @@
 
 .nav-menu-items {
   width: 180px;
+  background-color: #191919;
 }
 
 .navbar-toggle {

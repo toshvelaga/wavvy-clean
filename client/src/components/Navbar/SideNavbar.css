@@ -63,7 +63,7 @@ ul {
   display: block;
   background-color: inherit;
   color: black;
-  padding: 20px 16px;
+  padding: 16px 16px;
   width: 100%;
   border: none;
   outline: none;
@@ -75,7 +75,7 @@ ul {
 
 /* Change background color of buttons on hover */
 .side-navbar li:hover {
-  background-color: #ddd;
+  background-color: #303030;
 }
 
 /* Create an active/current "tab button" class */
