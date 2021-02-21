@@ -1,5 +1,5 @@
-import React from 'react';
-import './Textarea.css';
+import React from "react";
+import "./Textarea.css";
 
 function Textarea(props) {
   return (
@@ -10,9 +10,8 @@ function Textarea(props) {
           value={props.value}
           onChange={props.onChange}
           style={{
-					  width: '100%',
-					  // marginTop: ".5rem",
-					  backgroundColor: props.backgroundColor,
+            width: "100%",
+            backgroundColor: props.backgroundColor,
           }}
           rows={props.rows}
           cols="50"

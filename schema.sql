@@ -17,14 +17,15 @@ CREATE TABLE podcasts (
     host_name character varying(255),
     date_created timestamp without time zone,
     podcast_subtitle character varying(255),
-    language character varying,
+    language json,
     category character varying,
     website character varying,
     copyright character varying(255),
     fullname character varying(255),
     contact_email character varying(255),
     author character varying(255),
-    explicit_content boolean
+    podcast_explicit_content boolean,
+    podcast_category json,
 );
 
 CREATE TABLE episodes (
