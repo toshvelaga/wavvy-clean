@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './Logout.css';
-import * as MdIcons from 'react-icons/md';
+import React, { Component } from "react";
+import "./Logout.css";
+import * as MdIcons from "react-icons/md";
 
 // https://blog.campvanilla.com/reactjs-dropdown-menus-b6e06ae3a8fe
 
@@ -20,13 +20,13 @@ class Logout extends Component {
     event.preventDefault();
 
     this.setState({ showMenu: true }, () => {
-      document.addEventListener('click', this.closeMenu);
+      document.addEventListener("click", this.closeMenu);
     });
   }
 
   closeMenu() {
     this.setState({ showMenu: false }, () => {
-      document.removeEventListener('click', this.closeMenu);
+      document.removeEventListener("click", this.closeMenu);
     });
   }
 
@@ -42,14 +42,10 @@ class Logout extends Component {
         </button>
 
         {this.state.showMenu ? (
-          <div style={{ textAlign: 'center' }} className="logout-menu">
+          <div style={{ textAlign: "center" }} className="logout-menu">
             <button onClick={this.props.fx} className="logout-menu-button">
               {this.props.title}
             </button>
-            {/* <br></br>
-						<button> Menu item 2 </button>
-						<br></br>
-						<button> Menu item 3 </button> */}
           </div>
         ) : null}
       </div>

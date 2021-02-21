@@ -1,18 +1,11 @@
 .analytics-container {
-	width: 60%;
-	margin: auto;
+  width: 60%;
+  margin: auto;
 }
 
 .analytics-container-div {
-	color: #fff;
-	/* color: #08c803; */
-	/* border: 1px solid #fff; */
-	background-color: #1b1b1b;
-	padding: 20px;
-	/* text-align: center; */
-	border-radius: 5px;
+  color: #fff;
+  background-color: #1b1b1b;
+  padding: 20px;
+  border-radius: 5px;
 }
-
-/* .analytics-container-div:hover {
-	color: #08c803;
-} */

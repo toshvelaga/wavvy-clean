@@ -1,26 +1,25 @@
 .menu {
-	position: absolute;
-	width: 150px;
-	background-color: black;
+  position: absolute;
+  width: 150px;
+  background-color: black;
 }
 
 .menu-button {
-	width: 100%;
-	height: 2.5rem;
+  width: 100%;
+  height: 2.5rem;
 }
 
 .three-dots:hover {
-	cursor: pointer;
-	border-radius: 50%;
-	color: #08c803;
-	/* color: black; */
+  cursor: pointer;
+  border-radius: 50%;
+  color: #08c803;
 }
 
 .three-dots {
-	border: none;
-	background: transparent;
-	color: #fff;
-	float: "right";
-	margin-right: "10px";
-	outline: none;
+  border: none;
+  background: transparent;
+  color: #fff;
+  float: "right";
+  margin-right: "10px";
+  outline: none;
 }

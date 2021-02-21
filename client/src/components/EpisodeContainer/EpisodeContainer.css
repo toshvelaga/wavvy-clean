@@ -1,55 +1,38 @@
 .episode-container {
-	/* width: 600px; */
-	height: 200px;
-	border-radius: 5px;
-	margin: 20px auto;
-	background-color: #1b1b1b;
-	display: flex;
+  /* width: 600px; */
+  height: 200px;
+  border-radius: 5px;
+  margin: 20px auto;
+  background-color: #1b1b1b;
+  display: flex;
 }
 
 .episode-info {
-	width: 100%;
-	position: relative;
-	top: 50%;
-	height: 10rem;
-	margin-left: 1rem;
-	transform: translateY(-50%);
+  width: 100%;
+  position: relative;
+  top: 50%;
+  height: 10rem;
+  margin-left: 1rem;
+  transform: translateY(-50%);
 }
 
-/* .podcast-info {
-	position: relative;
-	top: 50%;
-	height: 10rem;
-	margin-left: 1rem;
-	margin-right: 1rem;
-	width: 80%;
-	transform: translateY(-50%);
-} */
-
 .episode-text {
-	color: #fff;
-	margin-bottom: 0.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
 }
 
 .episode-image {
-	margin-left: 1rem;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 10rem;
-	height: 10rem;
-	border-radius: 5px;
+  margin-left: 1rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5px;
 }
 
-/* @media only screen and (max-width: 1000px) {
-	.podcasts-lists {
-		width: 90%;
-		margin: auto;
-	}
-} */
-
 @media only screen and (max-width: 600px) {
-	.episode-image {
-		display: none;
-	}
+  .episode-image {
+    display: none;
+  }
 }

@@ -1,30 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import TextInputLabel from '../../components/TextInputLabel/TextInputLabel';
-import TextInputPassword from '../../components/TextInputLabel/TextInputPassword';
-import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
-import './Login.css';
-import store from '../../store/store';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import TextInputLabel from "../../components/TextInputLabel/TextInputLabel";
+import TextInputPassword from "../../components/TextInputLabel/TextInputPassword";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import "./Login.css";
+import store from "../../store/store";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 // TUTORIAL NEED TO WATCH: https://www.youtube.com/watch?v=H7qkTzxk_0I&ab_channel=CodingGarden
-
 // documentation for storing password to DB: www.youtube.com/watch?v=vxu1RrR0vbw
 
-// WAS LAST AT 50 MINUTES
-
-// code for login: https://github.com/conorbailey90/node-js-passport-login-postgresql/tree/master/views
-
-// Client side auth with redux: https://www.pluralsight.com/guides/how-to-router-redirect-after-login
-
-// https://www.npmjs.com/package/react-toastify
-
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMsgEmail, seterrorMsgEmail] = useState('');
-  const [errorMsgPassword, seterrorMsgPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMsgEmail, seterrorMsgEmail] = useState("");
+  const [errorMsgPassword, seterrorMsgPassword] = useState("");
 
   const submit = () => {
     const data = {
@@ -33,9 +24,9 @@ function Login() {
     };
 
     axios
-      .post('/login', data)
-      .then((res) => localStorage.setItem('token', res.data.jwtToken))
-      .then(() => store.dispatch({ type: 'LOGIN' }))
+      .post("/login", data)
+      .then((res) => localStorage.setItem("token", res.data.jwtToken))
+      .then(() => store.dispatch({ type: "LOGIN" }))
       .catch((err) => createErrorMsgs(err));
   };
 
@@ -47,10 +38,10 @@ function Login() {
   return (
     <>
       <div className="login-container">
-        <h1 style={{ marginBottom: '2rem', color: '#fff' }}>
+        <h1 style={{ marginBottom: "2rem", color: "#fff" }}>
           Welcome to Wavvy
         </h1>
-        <div style={{ marginBottom: '.5em' }}>
+        <div style={{ marginBottom: ".5em" }}>
           <TextInputLabel
             label="Email Address"
             placeholder="Email Address"
@@ -70,11 +61,11 @@ function Login() {
             <ErrorMessage errorMsg={errorMsgPassword} />
           ) : null}
         </div>
-        <p style={{ color: 'grey', marginTop: '.5rem' }}>
+        <p style={{ color: "grey", marginTop: ".5rem" }}>
           <Link
             style={{
-						  textDecoration: 'none',
-						  color: 'grey',
+              textDecoration: "none",
+              color: "grey",
             }}
             to="/forgot-password"
           >
@@ -82,13 +73,13 @@ function Login() {
           </Link>
         </p>
         <div className="login-button">
-          <PrimaryButton style={{ width: '100%' }} title="Submit" fx={submit} />
+          <PrimaryButton style={{ width: "100%" }} title="Submit" fx={submit} />
         </div>
-        <p style={{ color: 'grey', marginTop: '1rem', textAlign: 'center' }}>
+        <p style={{ color: "grey", marginTop: "1rem", textAlign: "center" }}>
           <Link
             style={{
-						  textDecoration: 'none',
-						  color: 'grey',
+              textDecoration: "none",
+              color: "grey",
             }}
             to="/register"
           >

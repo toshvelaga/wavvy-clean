@@ -1,14 +1,9 @@
-import React from 'react';
-import RoundButton from '../RoundButton/RoundButton';
-import Button from './Button';
-import './control-panel.css';
-import * as RiIcons from 'react-icons/ri';
+import React from "react";
+import "./control-panel.css";
 
-function ControlPanel({
-  play, isPlaying, duration, currentTime,
-}) {
+function ControlPanel({ play, isPlaying, duration, currentTime }) {
   function secondsToHms(seconds) {
-    if (!seconds) return '00m 00s';
+    if (!seconds) return "00m 00s";
 
     let duration = seconds;
     const hours = duration / 3600;
@@ -28,7 +23,8 @@ function ControlPanel({
 
     if (parseInt(hours, 10) > 0) {
       return `${parseInt(hours, 10)}h ${min}m ${sec}s`;
-    } if (min == 0) {
+    }
+    if (min == 0) {
       return `00m ${sec}s`;
     }
     return `${min}m ${sec}s`;

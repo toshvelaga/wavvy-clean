@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
-import * as AiIcons from 'react-icons/ai';
-import * as FiIcons from 'react-icons/fi';
-import * as FaIcons from 'react-icons/fa';
-import * as MdIcons from 'react-icons/md';
-import RoundButton from '../RoundButton/RoundButton';
-import Card from '../Card/Card';
-import './EpisodeContainer.css';
-import secondsToHms from '../../utils/secondsToHms';
-import Modal from 'react-modal';
+import React, { useState } from "react";
+import * as MdIcons from "react-icons/md";
+import RoundButton from "../RoundButton/RoundButton";
+import Card from "../Card/Card";
+import "./EpisodeContainer.css";
+import secondsToHms from "../../utils/secondsToHms";
+import Modal from "react-modal";
 
 const customStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: 'black',
-    borderRadius: '5px',
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "black",
+    borderRadius: "5px",
   },
 };
 
@@ -33,7 +30,7 @@ function EpisodeContainer(props) {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    subtitle.style.color = "#f00";
   }
 
   function closeModal() {
@@ -79,7 +76,7 @@ function EpisodeContainer(props) {
           Are you sure you want to delete?
         </h3>
         <div>I am a modal</div>
-        <form style={{ float: 'right' }}>
+        <form style={{ float: "right" }}>
           <button className="modal-button" onClick={closeModal}>
             No
           </button>

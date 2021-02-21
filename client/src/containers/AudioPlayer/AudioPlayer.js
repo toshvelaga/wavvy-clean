@@ -1,20 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './AudioPlayer.css';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import * as RiIcons from 'react-icons/ri';
-import * as GrIcons from 'react-icons/gr';
-import * as MdIcons from 'react-icons/md';
-import * as BsIcons from 'react-icons/bs';
-import AlbumImage from '../../components/AlbumImage/AlbumImage';
-import ControlPanel from '../../components/Controls/ControlPanel';
-import Slider from '../../components/Slider/Slider';
-import Navbar from '../../components/Navbar/Navbar';
-import RoundButton from '../../components/RoundButton/RoundButton';
-import Button from '../../components/Controls/Button';
-import Textarea from '../../components/Textarea/Textarea';
-import TextareaDark from '../../components/Textarea/TextareaDark';
-import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
+import React, { useState, useEffect, useRef } from "react";
+import "./AudioPlayer.css";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import * as BsIcons from "react-icons/bs";
+import ControlPanel from "../../components/Controls/ControlPanel";
+import Slider from "../../components/Slider/Slider";
+import Navbar from "../../components/Navbar/Navbar";
+import Button from "../../components/Controls/Button";
+import TextareaDark from "../../components/Textarea/TextareaDark";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 
 // https://www.youtube.com/watch?v=AYBuL8FhgwA&ab_channel=jsua
 // https://github.com/OlegSuncrown/react-audio-player/blob/master/src/App.js
@@ -26,8 +20,8 @@ function AudioPlayer(props) {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState();
   const [speed, setSpeed] = useState(1);
-  const [textareaValue, setTextareaValue] = useState('');
-  const [buttonTitle, setbuttonTitle] = useState('Copy Embed Link');
+  const [textareaValue, setTextareaValue] = useState("");
+  const [buttonTitle, setbuttonTitle] = useState("Copy Embed Link");
 
   const textAreaRef = useRef(null);
 
@@ -57,8 +51,8 @@ function AudioPlayer(props) {
 
   const getCurrDuration = (e) => {
     const percent = (
-      (e.currentTarget.currentTime / e.currentTarget.duration)
-			* 100
+      (e.currentTarget.currentTime / e.currentTarget.duration) *
+      100
     ).toFixed(2);
 
     const time = e.currentTarget.currentTime;
@@ -76,11 +70,11 @@ function AudioPlayer(props) {
   const skip = (time) => {
     const audio = audioRef.current;
 
-    if (time == 'back') {
-      console.log('15');
+    if (time == "back") {
+      console.log("15");
       audio.currentTime -= 15;
-    } else if (time == 'fwd') {
-      console.log('15');
+    } else if (time == "fwd") {
+      console.log("15");
       audio.currentTime += 15;
     }
   };
@@ -97,7 +91,7 @@ function AudioPlayer(props) {
 
   useEffect(() => {
     setTextareaValue(
-      `<iframe src="https://www.wavvy.us/episodes/${id}/embed-audio-player" width="100%" height="200" frameBorder="0" scrolling="no"></iframe>`,
+      `<iframe src="https://www.wavvy.us/episodes/${id}/embed-audio-player" width="100%" height="200" frameBorder="0" scrolling="no"></iframe>`
     );
   }, []);
 
@@ -109,18 +103,18 @@ function AudioPlayer(props) {
   return (
     <>
       <Navbar />
-      <div style={{ paddingTop: '5rem' }}>
+      <div style={{ paddingTop: "5rem" }}>
         <div className="podcast-audio-container">
           <img className="podcast-image" src={episodeData.episode_artwork} />
           <div className="podcast-info">
-            <h3 style={{ color: '#fff', marginBottom: '.3em' }}>
+            <h3 style={{ color: "#fff", marginBottom: ".3em" }}>
               {episodeData.episode_title}
             </h3>
             <p
               style={{
-							  color: '#535353',
-							  marginBottom: '.3em',
-							  fontWeight: 200,
+                color: "#535353",
+                marginBottom: ".3em",
+                fontWeight: 200,
               }}
             >
               {episodeData.podcast_title}
@@ -139,14 +133,13 @@ function AudioPlayer(props) {
             </div>
             <div>
               <Button play={play} isPlaying={isPlaying} />
-              <button className="skip-buttons" onClick={() => skip('back')}>
+              <button className="skip-buttons" onClick={() => skip("back")}>
                 <BsIcons.BsArrowCounterclockwise color="#535353" size={22} />
               </button>
               <button className="speed-button" onClick={() => changeSpeed()}>
-                {speed}
-                x
+                {speed}x
               </button>
-              <button className="skip-buttons" onClick={() => skip('fwd')}>
+              <button className="skip-buttons" onClick={() => skip("fwd")}>
                 <BsIcons.BsArrowClockwise color="#535353" size={22} />
               </button>
             </div>
@@ -154,7 +147,7 @@ function AudioPlayer(props) {
               ref={audioRef}
               onTimeUpdate={getCurrDuration}
               onLoadedData={(e) => {
-							  setDuration(e.currentTarget.duration.toFixed(2));
+                setDuration(e.currentTarget.duration.toFixed(2));
               }}
               src={episodeData.episode_audio}
             />
@@ -166,10 +159,10 @@ function AudioPlayer(props) {
         </div>
         <div className="audio-player-submit-button">
           <PrimaryButton
-            style={{ width: '80%' }}
+            style={{ width: "80%" }}
             fx={() => {
-						  navigator.clipboard.writeText(textareaValue);
-						  setbuttonTitle('Copied!');
+              navigator.clipboard.writeText(textareaValue);
+              setbuttonTitle("Copied!");
             }}
             title={buttonTitle}
           />
