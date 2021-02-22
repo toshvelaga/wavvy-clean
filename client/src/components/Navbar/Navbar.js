@@ -29,7 +29,7 @@ function Navbar(props) {
           <FaIcons.FaUserCircle color="#fff" size={30} />
         </span>
         <span className="notification-icon">
-          <FaIcons.FaBell color="#fff" size={20} />
+          <FaIcons.FaBell color="#fff" size={22} />
         </span>
         <span onClick={showSidebar} className="hamburger-icon">
           <FaIcons.FaBars color="#fff" size={20} />

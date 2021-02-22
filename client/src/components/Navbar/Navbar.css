@@ -22,7 +22,10 @@
   color: black;
 }
 
-.notification-icon,
+.notification-icon {
+  margin-top: 2px;
+}
+
 .hamburger-icon {
   margin-top: 4px;
 }
