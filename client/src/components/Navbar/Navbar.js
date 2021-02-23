@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import { connect } from "react-redux";
 import { unauthenticate } from "../../store/actions/actions";
@@ -11,8 +11,24 @@ import SideNavbar from "./SideNavbar";
 
 function Navbar(props) {
   const [sidebar, setSidebar] = useState(false);
+  const [width, setWidth] = useState(0);
 
   const showSidebar = () => setSidebar(!sidebar);
+  const closeSidebar = () => setSidebar(false);
+
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      const newWidth = window.innerWidth;
+      setWidth(newWidth);
+      console.log("updating width");
+    };
+
+    window.addEventListener("resize", updateWindowDimensions);
+
+    return () => window.removeEventListener("resize", updateWindowDimensions);
+  }, []);
+
+  console.log("give width", width);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -33,7 +49,8 @@ function Navbar(props) {
           />
         </span>
         <span className="notification-icon">
-          <FaIcons.FaBell color="#fff" size={22} />
+          {/* <FaIcons.FaBell color="#fff" size={22} /> */}
+          <div style={{ color: "red" }}>{width}px</div>
         </span>
         <span onClick={showSidebar} className="hamburger-icon">
           <FaIcons.FaBars color="#fff" size={20} />
