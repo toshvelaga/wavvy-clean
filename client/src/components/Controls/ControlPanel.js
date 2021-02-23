@@ -1,9 +1,11 @@
-import React from "react";
-import "./control-panel.css";
+import React from 'react';
+import './control-panel.css';
 
-function ControlPanel({ play, isPlaying, duration, currentTime }) {
+function ControlPanel({
+  play, isPlaying, duration, currentTime,
+}) {
   function secondsToHms(seconds) {
-    if (!seconds) return "00m 00s";
+    if (!seconds) return '00m 00s';
 
     let duration = seconds;
     const hours = duration / 3600;

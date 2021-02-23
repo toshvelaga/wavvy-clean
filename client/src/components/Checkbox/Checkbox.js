@@ -1,5 +1,5 @@
-import React from "react";
-import "./Checkbox.css";
+import React from 'react';
+import './Checkbox.css';
 
 // checkbox docs: https://codepen.io/avstorm/pen/vYYBxRM
 
@@ -11,7 +11,7 @@ function Checkbox(props) {
           className="inp-cbx"
           id="cbx"
           type="checkbox"
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
           onChange={props.onChange}
           checked={props.checked}
         />
@@ -21,7 +21,7 @@ function Checkbox(props) {
               <polyline points="1 5 4 8 11 1" />
             </svg>
           </span>
-          <span style={{ color: "#fff" }}>
+          <span style={{ color: '#fff' }}>
             This episode contains explicit material.
           </span>
         </label>

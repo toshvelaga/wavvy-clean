@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
-import Navbar from "../../components/Navbar/Navbar";
-import TextInputLabel from "../../components/TextInputLabel/TextInputLabel";
-import TextInputPassword from "../../components/TextInputLabel/TextInputPassword";
-import "./Settings.css";
-import { useToasts } from "react-toast-notifications";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import InjectedCheckoutForm from "../../components/CheckoutForm/CheckoutForm";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
+import Navbar from '../../components/Navbar/Navbar';
+import TextInputLabel from '../../components/TextInputLabel/TextInputLabel';
+import TextInputPassword from '../../components/TextInputLabel/TextInputPassword';
+import './Settings.css';
+import { useToasts } from 'react-toast-notifications';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import InjectedCheckoutForm from '../../components/CheckoutForm/CheckoutForm';
 
 const stripePromise = loadStripe(
-  `${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`
+  `${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`,
 );
 
 function Settings() {
-  const [oldPassword, setOldPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmNewPassword, setConfirmNewPassword] = useState("");
-  const [errorMsgOldPassword, seterrorMsgOldPassword] = useState("");
-  const [errorMsgPassword1, seterrorMsgPassword1] = useState("");
-  const [errorMsgPassword2, seterrorMsgPassword2] = useState("");
-  const [errorMsgDontMatch, seterrorMsgDontMatch] = useState("");
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmNewPassword, setConfirmNewPassword] = useState('');
+  const [errorMsgOldPassword, seterrorMsgOldPassword] = useState('');
+  const [errorMsgPassword1, seterrorMsgPassword1] = useState('');
+  const [errorMsgPassword2, seterrorMsgPassword2] = useState('');
+  const [errorMsgDontMatch, seterrorMsgDontMatch] = useState('');
 
   // Logout clears JWT from localStorage
 
@@ -37,15 +37,13 @@ function Settings() {
     };
 
     axios
-      .patch("/update-password", data, { headers })
-      .then(() =>
-        addToast(
-          "Password succesfully changed! Please log in using your new password.",
-          {
-            appearance: "success",
-          }
-        )
-      )
+      .patch('/update-password', data, { headers })
+      .then(() => addToast(
+        'Password succesfully changed! Please log in using your new password.',
+        {
+          appearance: 'success',
+        },
+      ))
       .catch((err) => createErrorMsgs(err));
   };
 
@@ -58,7 +56,7 @@ function Settings() {
 
   return (
     <>
-      <div style={{ paddingBottom: "5rem" }}>
+      <div style={{ paddingBottom: '5rem' }}>
         <Navbar />
       </div>
       <div className="create-podcast-container">
@@ -73,13 +71,13 @@ function Settings() {
 
         <div
           style={{
-            marginBottom: "1rem",
-            paddingTop: "0rem",
+            marginBottom: '1rem',
+            paddingTop: '0rem',
           }}
         >
-          <h1 style={{ color: "#fff" }}>Change Password</h1>
+          <h1 style={{ color: '#fff' }}>Change Password</h1>
         </div>
-        <div style={{ marginTop: "1rem" }}>
+        <div style={{ marginTop: '1rem' }}>
           <TextInputLabel
             color="#fff"
             label="Old Password"
@@ -87,11 +85,11 @@ function Settings() {
             value={oldPassword}
             onChange={(e) => setOldPassword(e.target.value)}
           />
-          <p style={{ color: "red", marginBottom: ".5rem" }}>
+          <p style={{ color: 'red', marginBottom: '.5rem' }}>
             {errorMsgOldPassword}
           </p>
         </div>
-        <div style={{ marginTop: ".5rem" }}>
+        <div style={{ marginTop: '.5rem' }}>
           <TextInputLabel
             color="#fff"
             label="New Password"
@@ -99,11 +97,11 @@ function Settings() {
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
           />
-          <p style={{ color: "red", marginBottom: ".5rem" }}>
+          <p style={{ color: 'red', marginBottom: '.5rem' }}>
             {errorMsgPassword1}
           </p>
         </div>
-        <div style={{ marginTop: ".5rem" }}>
+        <div style={{ marginTop: '.5rem' }}>
           <TextInputLabel
             color="#fff"
             label="Confirm New Password"
@@ -111,16 +109,16 @@ function Settings() {
             value={confirmNewPassword}
             onChange={(e) => setConfirmNewPassword(e.target.value)}
           />
-          <p style={{ color: "red", marginBottom: ".5rem" }}>
+          <p style={{ color: 'red', marginBottom: '.5rem' }}>
             {errorMsgPassword2 || errorMsgDontMatch}
           </p>
         </div>
         <div
-          style={{ margin: "0 auto", width: "100%" }}
+          style={{ margin: '0 auto', width: '100%' }}
           className="update-profile-button-container"
         >
           <PrimaryButton
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
             title="Update Profile"
             fx={submit}
           />

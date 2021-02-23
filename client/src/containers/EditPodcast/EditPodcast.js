@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from "react";
-import "./EditPodcast.css";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { connect } from "react-redux";
-import TextInputLabel from "../../components/TextInputLabel/TextInputLabel";
-import Selected from "../../components/Selected/Selected";
-import Checkbox from "../../components/Checkbox/Checkbox";
+import React, { useState, useEffect } from 'react';
+import './EditPodcast.css';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import TextInputLabel from '../../components/TextInputLabel/TextInputLabel';
+import Selected from '../../components/Selected/Selected';
+import Checkbox from '../../components/Checkbox/Checkbox';
 import {
   LANGUAGES,
   PODCAST_TYPES,
   CATEGORIES,
-} from "../../constants/constants";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
-import ImageUpload from "../../components/ImageUpload/ImageUpload";
-import EditImage from "../../components/EditImage/EditImage";
-import Textarea from "../../components/Textarea/Textarea";
-import { getImage } from "../../store/actions/actions";
-import Navbar from "../../components/Navbar/Navbar";
-import theme from "../../styles/theme.style";
+} from '../../constants/constants';
+import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
+import ImageUpload from '../../components/ImageUpload/ImageUpload';
+import EditImage from '../../components/EditImage/EditImage';
+import Textarea from '../../components/Textarea/Textarea';
+import { getImage } from '../../store/actions/actions';
+import Navbar from '../../components/Navbar/Navbar';
+import theme from '../../styles/theme.style';
 
 function PodcastSettings(props) {
-  const [title, setTitle] = useState("");
-  const [subtitle, setSubtitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [language, setLanguage] = useState("");
-  const [category, setCategory] = useState("");
-  const [email, setEmail] = useState("");
-  const [website, setWebsite] = useState("");
-  const [copyright, setCopyright] = useState("");
-  const [hostname, setHostname] = useState("");
-  const [author, setAuthor] = useState("");
+  const [title, setTitle] = useState('');
+  const [subtitle, setSubtitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [language, setLanguage] = useState('');
+  const [category, setCategory] = useState('');
+  const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState('');
+  const [copyright, setCopyright] = useState('');
+  const [hostname, setHostname] = useState('');
+  const [author, setAuthor] = useState('');
   const [explicit, setExplicit] = useState(false);
-  const [imagePreviewUrl, setImagePreviewUrl] = useState("");
+  const [imagePreviewUrl, setImagePreviewUrl] = useState('');
 
   const { id } = useParams();
 
@@ -74,7 +74,7 @@ function PodcastSettings(props) {
     axios
       .put(`/api/update/podcast/settings/${id}`, data, { headers })
       .then((response) => console.log(response))
-      .then(() => props.history.push("/podcasts"))
+      .then(() => props.history.push('/podcasts'))
       .catch((err) => console.log(err));
   };
 
@@ -95,14 +95,14 @@ function PodcastSettings(props) {
 
   return (
     <>
-      <div style={{ paddingBottom: "5rem" }}>
+      <div style={{ paddingBottom: '5rem' }}>
         <Navbar />
       </div>
       <div className="edit-podcast-container">
         <div
           style={{
-            marginBottom: "1rem",
-            paddingTop: "0rem",
+            marginBottom: '1rem',
+            paddingTop: '0rem',
           }}
         >
           <h1 style={{ color: theme.TEXT_COLOR_WHITE }}>Edit Podcast</h1>

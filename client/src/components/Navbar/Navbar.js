@@ -56,16 +56,14 @@ function Navbar(props) {
                 <FaIcons.FaBars size={20} />
               </Link>
             </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span style={{ marginLeft: "5px" }}>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
+            {SidebarData.map((item, index) => (
+              <li key={index} className={item.cName}>
+                <Link to={item.path}>
+                  {item.icon}
+                  <span style={{ marginLeft: "5px" }}>{item.title}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </IconContext.Provider>

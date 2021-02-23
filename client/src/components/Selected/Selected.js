@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Select from "react-select";
-import "./Selected.css";
+import React, { Component } from 'react';
+import Select from 'react-select';
+import './Selected.css';
 
 // react-select: https://www.npmjs.com/package/react-select
 
@@ -8,11 +8,11 @@ function Selected(props) {
   const customStyles = {
     control: (base, state) => ({
       ...base,
-      background: "#242424",
+      background: '#242424',
       // match with the menu
       // borderRadius: state.isFocused ? "3px 3px 0 0" : 3,
       // // Overwrittes the different states of border
-      borderColor: state.isFocused ? "black" : "transparent",
+      borderColor: state.isFocused ? 'black' : 'transparent',
     }),
     menu: (base) => ({
       ...base,
@@ -28,7 +28,7 @@ function Selected(props) {
     }),
     placeholder: (defaultStyles) => ({
       ...defaultStyles,
-      color: "#ffffff",
+      color: '#ffffff',
       // color: "#333333",
     }),
   };
@@ -36,7 +36,7 @@ function Selected(props) {
     <>
       <div className="selected-container">
         <label
-          style={{ display: "block", marginBottom: "8px", color: props.color }}
+          style={{ display: 'block', marginBottom: '8px', color: props.color }}
           className="label"
         >
           {props.label}
@@ -50,7 +50,7 @@ function Selected(props) {
           // defaultInputValue={props.defaultInputValue}
           theme={(theme) => ({
             ...theme,
-            border: "1px solid black",
+            border: '1px solid black',
             // borderRadius: 0,
             colors: {
               ...theme.colors,

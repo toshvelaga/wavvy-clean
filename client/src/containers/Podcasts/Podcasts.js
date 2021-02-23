@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import PodcastContainer from "../../components/PodcastContainer/PodcastContainer";
-import "./Podcasts.css";
-import axios from "axios";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
-import Navbar from "../../components/Navbar/Navbar";
+import React, { useEffect, useState } from 'react';
+import PodcastContainer from '../../components/PodcastContainer/PodcastContainer';
+import './Podcasts.css';
+import axios from 'axios';
+import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
+import Navbar from '../../components/Navbar/Navbar';
 
 function Podcasts(props) {
   const [podcasts, setPodcasts] = useState([]);
@@ -12,7 +12,7 @@ function Podcasts(props) {
 
   useEffect(() => {
     axios
-      .get("/api/get/podcasts", { headers })
+      .get('/api/get/podcasts', { headers })
       .then((res) => setPodcasts(res.data));
   }, []);
 
@@ -25,29 +25,23 @@ function Podcasts(props) {
       <Navbar />
       <div className="podcasts-lists">
         <div
-          style={{ textAlign: "center", marginTop: "0", paddingTop: "5rem" }}
+          style={{ textAlign: 'center', marginTop: '0', paddingTop: '5rem' }}
         >
           <PrimaryButton
-            fx={() => props.history.push("/podcasts/create")}
+            fx={() => props.history.push('/podcasts/create')}
             title="Create new Podcast"
           />
         </div>
         <div>
           {podcasts.map((podcast) => (
             <PodcastContainer
-              fx1={() =>
-                props.history.push(`/podcasts/settings/${podcast.pid}`)
-              }
+              fx1={() => props.history.push(`/podcasts/settings/${podcast.pid}`)}
               fx2={() => props.history.push(`/${podcast.pid}/episodes`)}
-              fx3={() =>
-                props.history.push(`podcasts/${podcast.pid}/episodes/create`)
-              }
-              fx4={() =>
-                window.open(
-                  `https://www.wavvy.us/get-rss-feed/${podcast.pid}`,
-                  "_blank"
-                )
-              }
+              fx3={() => props.history.push(`podcasts/${podcast.pid}/episodes/create`)}
+              fx4={() => window.open(
+                `https://www.wavvy.us/get-rss-feed/${podcast.pid}`,
+                '_blank',
+              )}
               deletePodcast={() => deletePodcast(podcast.pid)}
               coverImage={podcast.cover_artwork}
               podcastName={podcast.podcast_title}

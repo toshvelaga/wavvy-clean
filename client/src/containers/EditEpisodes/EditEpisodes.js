@@ -209,7 +209,7 @@ function EditEpisodes(props) {
                     className="tag-close-icon"
                     onClick={() => removeContributors(index)}
                   >
-  x
+                    x
                   </span>
                 </li>
               ))}
@@ -236,7 +236,7 @@ function EditEpisodes(props) {
                     className="tag-close-icon"
                     onClick={() => removeKeywords(index)}
                   >
-  x
+                    x
                   </span>
                 </li>
               ))}

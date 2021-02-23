@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import EpisodeContainer from "../../components/EpisodeContainer/EpisodeContainer";
-import "./Episodes.css";
-import axios from "axios";
-import Navbar from "../../components/Navbar/Navbar";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
-import Modal from "react-modal";
-import SelectedEpisode from "../../components/Selected/SelectedEpisode";
-import { useParams } from "react-router-dom";
-import { useToasts } from "react-toast-notifications";
+import React, { useState, useEffect } from 'react';
+import EpisodeContainer from '../../components/EpisodeContainer/EpisodeContainer';
+import './Episodes.css';
+import axios from 'axios';
+import Navbar from '../../components/Navbar/Navbar';
+import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
+import Modal from 'react-modal';
+import SelectedEpisode from '../../components/Selected/SelectedEpisode';
+import { useParams } from 'react-router-dom';
+import { useToasts } from 'react-toast-notifications';
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 function Episodes(props) {
   const [episodes, setEpisodes] = useState([]);
@@ -21,9 +21,9 @@ function Episodes(props) {
   const { addToast } = useToasts();
 
   useEffect(() => {
-    if (window.location.pathname == "/episodes") {
+    if (window.location.pathname == '/episodes') {
       axios
-        .get("/api/get/episodes", { headers })
+        .get('/api/get/episodes', { headers })
         .then((res) => setEpisodes(res.data));
     } else {
       axios
@@ -34,7 +34,7 @@ function Episodes(props) {
 
   useEffect(() => {
     axios
-      .get("/api/get/podcasts/options", { headers })
+      .get('/api/get/podcasts/options', { headers })
       .then((res) => setOptions(res.data));
   }, []);
 
@@ -50,11 +50,11 @@ function Episodes(props) {
 
   const createEpisodeHandler = () => {
     if (!options.length) {
-      addToast("Please create a podcast first before adding episodes :)", {
-        appearance: "warning",
+      addToast('Please create a podcast first before adding episodes :)', {
+        appearance: 'warning',
       });
     } else {
-      props.history.push("/episodes/create");
+      props.history.push('/episodes/create');
     }
   };
 
@@ -64,19 +64,19 @@ function Episodes(props) {
     !options.length
       ? (result = [])
       : (result = options.map((opt) => ({
-          value: opt.pid,
-          label: opt.podcast_title,
-        })));
+        value: opt.pid,
+        label: opt.podcast_title,
+      })));
   }
 
   return (
     <>
       <Navbar />
       <div className="episodes-list">
-        <div style={{ textAlign: "center", paddingTop: "5rem" }}>
+        <div style={{ textAlign: 'center', paddingTop: '5rem' }}>
           <PrimaryButton fx={createEpisodeHandler} title="Create new Episode" />
         </div>
-        <div style={{ marginTop: "1rem" }}>
+        <div style={{ marginTop: '1rem' }}>
           {options.length ? (
             <SelectedEpisode
               onChange={(result) => onChangeHandler(result)}
@@ -89,24 +89,18 @@ function Episodes(props) {
           {!Array.isArray(episodes) || !episodes.length
             ? null
             : episodes.map((episode) => (
-                <EpisodeContainer
-                  onClick={() =>
-                    props.history.push(`/analytics/${episode.eid}`)
-                  }
-                  onClick2={() =>
-                    props.history.push(`/episodes/${episode.eid}/edit`)
-                  }
-                  deleteEpisode={() => deleteEpisode(episode.eid)}
-                  onClick4={() =>
-                    props.history.push(`/episodes/${episode.eid}/audio`)
-                  }
-                  episodeImage={episode.episode_artwork}
-                  episodeTitle={episode.episode_title}
-                  podcastName={episode.podcast_title}
-                  publishedDate={episode.episode_date_created}
-                  duration={episode.audio_duration}
-                />
-              ))}
+              <EpisodeContainer
+                onClick={() => props.history.push(`/analytics/${episode.eid}`)}
+                onClick2={() => props.history.push(`/episodes/${episode.eid}/edit`)}
+                deleteEpisode={() => deleteEpisode(episode.eid)}
+                onClick4={() => props.history.push(`/episodes/${episode.eid}/audio`)}
+                episodeImage={episode.episode_artwork}
+                episodeTitle={episode.episode_title}
+                podcastName={episode.podcast_title}
+                publishedDate={episode.episode_date_created}
+                duration={episode.audio_duration}
+              />
+            ))}
         </div>
       </div>
     </>

@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import RoundButton from "../RoundButton/RoundButton";
-import "./WebsiteContainer.css";
-import * as MdIcons from "react-icons/md";
-import axios from "axios";
-import Modal from "react-modal";
-import Card from "../Card/Card";
+import React, { useState, useEffect } from 'react';
+import RoundButton from '../RoundButton/RoundButton';
+import './WebsiteContainer.css';
+import * as MdIcons from 'react-icons/md';
+import axios from 'axios';
+import Modal from 'react-modal';
+import Card from '../Card/Card';
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "black",
-    borderRadius: "5px",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: 'black',
+    borderRadius: '5px',
   },
 };
 
@@ -27,13 +27,13 @@ function WebsiteContainer(props) {
       <div className="podcast-container">
         <img className="podcast-image" src={props.coverImage} />
         <div className="podcast-info">
-          <h3 style={{ color: "#fff", marginBottom: ".5em" }}>
+          <h3 style={{ color: '#fff', marginBottom: '.5em' }}>
             {props.podcastName}
           </h3>
           <p
             style={{
-              color: "#fff",
-              marginBottom: ".5em",
+              color: '#fff',
+              marginBottom: '.5em',
             }}
           >
             {props.podcastDesc}
