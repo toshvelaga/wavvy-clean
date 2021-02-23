@@ -26,7 +26,11 @@ function Navbar(props) {
 
       <div id="top-navbar">
         <span className="user-circle-icon">
-          <FaIcons.FaUserCircle color="#fff" size={30} />
+          <FaIcons.FaUserCircle
+            onClick={() => alert("clicked")}
+            color="#fff"
+            size={30}
+          />
         </span>
         <span className="notification-icon">
           <FaIcons.FaBell color="#fff" size={22} />
@@ -42,7 +46,10 @@ function Navbar(props) {
       {/* Mobile navbar overlay for small screen size */}
 
       <IconContext.Provider value={{ color: "fff" }}>
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <nav
+          style={{ zIndex: 99 }}
+          className={sidebar ? "nav-menu active" : "nav-menu"}
+        >
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="hamburger-icon">

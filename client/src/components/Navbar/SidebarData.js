@@ -8,25 +8,25 @@ export const SidebarData = [
   {
     title: "Podcasts",
     path: "/podcasts",
-    icon: <FaIcons.FaPodcast />,
+    icon: <FaIcons.FaPodcast size={24} />,
     cName: "nav-text",
   },
   {
     title: "Episodes",
     path: "/episodes",
-    icon: <AiIcons.AiFillAudio />,
+    icon: <AiIcons.AiFillAudio size={24} />,
     cName: "nav-text",
   },
   {
     title: "Websites",
     path: "/website-settings",
-    icon: <MdIcons.MdWeb />,
+    icon: <MdIcons.MdWeb size={24} />,
     cName: "nav-text",
   },
   {
     title: "Settings",
     path: "/settings",
-    icon: <IoIcons.IoMdSettings />,
+    icon: <IoIcons.IoMdSettings size={24} />,
     cName: "nav-text",
   },
 ];
