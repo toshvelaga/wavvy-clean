@@ -14,7 +14,6 @@ function Navbar(props) {
   const [width, setWidth] = useState(0);
 
   const showSidebar = () => setSidebar(!sidebar);
-  const closeSidebar = () => setSidebar(false);
 
   useEffect(() => {
     const updateWindowDimensions = () => {
@@ -28,12 +27,16 @@ function Navbar(props) {
     return () => window.removeEventListener("resize", updateWindowDimensions);
   }, []);
 
-  console.log("give width", width);
-
   const logout = () => {
     localStorage.removeItem("token");
     props.unauthenticate();
     // props.history.push("/login");
+  };
+
+  const closeSideNav = () => {
+    if (sidebar == true && width > 555) {
+      setSidebar(false);
+    }
   };
 
   return (
@@ -49,8 +52,9 @@ function Navbar(props) {
           />
         </span>
         <span className="notification-icon">
-          {/* <FaIcons.FaBell color="#fff" size={22} /> */}
-          <div style={{ color: "red" }}>{width}px</div>
+          <FaIcons.FaBell color="#fff" size={22} />
+          {/* <div style={{ color: "red" }}>{width}px</div> */}
+          {closeSideNav()}
         </span>
         <span onClick={showSidebar} className="hamburger-icon">
           <FaIcons.FaBars color="#fff" size={20} />
