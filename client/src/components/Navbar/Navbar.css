@@ -20,6 +20,7 @@
 #top-navbar span:hover {
   background: #303030;
   color: black;
+  transition: 350ms;
 }
 
 .notification-icon {
