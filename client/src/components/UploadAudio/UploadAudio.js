@@ -1,15 +1,15 @@
-import React from 'react';
-import 'react-dropzone-uploader/dist/styles.css';
-import Dropzone from 'react-dropzone-uploader';
-import axios from 'axios';
-import { connect } from 'react-redux';
+import React from "react";
+import "react-dropzone-uploader/dist/styles.css";
+import Dropzone from "react-dropzone-uploader";
+import axios from "axios";
+import { connect } from "react-redux";
 import {
   getAudio,
   getAudioDuration,
   getAudioLength,
   getAudioType,
-} from '../../store/actions/actions';
-import './UploadAudio.css';
+} from "../../store/actions/actions";
+import "./UploadAudio.css";
 
 // react file upload progress: https://www.npmjs.com/package/react-fileupload-progress
 
@@ -19,20 +19,20 @@ const UploadAudio = (props) => {
   // specify upload params and url for your files
   const getUploadParams = ({ file, meta }) => {
     sendAudioToAWS(file).then((Location) => props.getAudioFile(Location));
-    return { url: 'https://httpbin.org/post' };
+    return { url: "https://httpbin.org/post" };
   };
 
   const sendAudioToAWS = (file) => {
     const formData = new FormData();
-    formData.append('audio', file);
+    formData.append("audio", file);
 
     const config = {
       headers: {
-        'content-type': 'multipart/form-data',
+        "content-type": "multipart/form-data",
       },
     };
 
-    const promise = axios.post('/upload-audio', formData, config);
+    const promise = axios.post("/upload-audio", formData, config);
 
     const dataPromise = promise.then((response) => response.data.Location);
 
@@ -59,11 +59,15 @@ const UploadAudio = (props) => {
   return (
     <>
       <div className="upload-audio-container">
-        <label style={{ color: 'black' }} className="label" htmlFor="fname">
+        <label
+          style={{ color: "#fff", marginBottom: "1rem" }}
+          className="label"
+          htmlFor="fname"
+        >
           Upload Audio File
         </label>
         <Dropzone
-					// PreviewComponent={Preview}
+          // PreviewComponent={Preview}
           inputContent="Drag Audio File or Click to Browse"
           maxFiles={1}
           multiple={false}

@@ -1,37 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import './NewEpisode.css';
-import axios from 'axios';
-import TextInputLabel from '../../components/TextInputLabel/TextInputLabel';
-import Selected from '../../components/Selected/Selected';
-import Checkbox from '../../components/Checkbox/Checkbox';
-import { PODCAST_TYPES } from '../../constants/constants';
-import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
-import ImageUpload from '../../components/ImageUpload/ImageUpload';
-import TextEditor from '../../components/TextEditor/TextEditor';
-import TagsInput from '../../components/TagsInput/TagsInput';
-import store from '../../store/store';
-import UploadAudio from '../../components/UploadAudio/UploadAudio';
-import createCurrentDate from '../../utils/createCurrentDate';
-import Navbar from '../../components/Navbar/Navbar';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+import React, { useState, useEffect } from "react";
+import "./NewEpisode.css";
+import axios from "axios";
+import TextInputLabel from "../../components/TextInputLabel/TextInputLabel";
+import Selected from "../../components/Selected/Selected";
+import Checkbox from "../../components/Checkbox/Checkbox";
+import { PODCAST_TYPES } from "../../constants/constants";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import ImageUpload from "../../components/ImageUpload/ImageUpload";
+import TextEditor from "../../components/TextEditor/TextEditor";
+import TagsInput from "../../components/TagsInput/TagsInput";
+import store from "../../store/store";
+import UploadAudio from "../../components/UploadAudio/UploadAudio";
+import createCurrentDate from "../../utils/createCurrentDate";
+import Navbar from "../../components/Navbar/Navbar";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import theme from "../../styles/theme.style";
 
 function NewEpisode(props) {
-  const [title, setTitle] = useState('');
-  const [season, setSeason] = useState('');
-  const [episode, setEpisode] = useState('');
-  const [selected, setSelected] = useState('');
+  const [title, setTitle] = useState("");
+  const [season, setSeason] = useState("");
+  const [episode, setEpisode] = useState("");
+  const [selected, setSelected] = useState("");
   const [explicit, setExplicit] = useState(false);
-  const [contributors, setContributors] = useState('');
-  const [keywords, setKeywords] = useState('');
-  const [file, setFile] = useState('');
-  const [audio, setAudio] = useState('');
+  const [contributors, setContributors] = useState("");
+  const [keywords, setKeywords] = useState("");
+  const [file, setFile] = useState("");
+  const [audio, setAudio] = useState("");
   const [audioDuration, setAudioDuration] = useState(0);
-  const [pid, setpid] = useState('');
+  const [pid, setpid] = useState("");
   const [options, setOptions] = useState([]);
 
-  const [errorMsgpid, seterrorMsgpid] = useState('');
-  const [errorMsgTitle, seterrorMsgTitle] = useState('');
-  const [errorMsgAudio, seterrorMsgAudio] = useState('');
+  const [errorMsgpid, seterrorMsgpid] = useState("");
+  const [errorMsgTitle, seterrorMsgTitle] = useState("");
+  const [errorMsgAudio, seterrorMsgAudio] = useState("");
 
   const { description } = store.getState().textEditorReducer;
 
@@ -52,21 +53,21 @@ function NewEpisode(props) {
 
   useEffect(() => {
     axios
-      .get('/api/get/podcasts/options', { headers })
+      .get("/api/get/podcasts/options", { headers })
       .then((res) => setOptions(res.data));
   }, []);
 
   const sendImageToAWS = () => {
     const formData = new FormData();
-    formData.append('image', file);
+    formData.append("image", file);
 
     const config = {
       headers: {
-        'content-type': 'multipart/form-data',
+        "content-type": "multipart/form-data",
       },
     };
 
-    const promise = axios.post('/upload-episode-art', formData, config);
+    const promise = axios.post("/upload-episode-art", formData, config);
 
     const dataPromise = promise.then((response) => response.data.Location);
 
@@ -91,23 +92,23 @@ function NewEpisode(props) {
     };
 
     return axios
-      .post('/api/post/new-episode', data, { headers })
+      .post("/api/post/new-episode", data, { headers })
       .then((response) => console.log(response))
       .catch((err) => console.log(err))
-      .then(() => props.history.push('/episodes'));
+      .then(() => props.history.push("/episodes"));
   };
 
   const submit = () => {
-    if (pid == '') {
-      seterrorMsgpid('Please select a podcast you want to add an episode to');
+    if (pid == "") {
+      seterrorMsgpid("Please select a podcast you want to add an episode to");
     }
 
-    if (title == '') {
-      seterrorMsgTitle('Please add a title for your episode');
+    if (title == "") {
+      seterrorMsgTitle("Please add a title for your episode");
     }
 
-    if (audio == '') {
-      seterrorMsgAudio('Please choose an audio file');
+    if (audio == "") {
+      seterrorMsgAudio("Please choose an audio file");
     } else sendImageToAWS().then((Location) => sendDataToDB(Location));
   };
 
@@ -134,23 +135,23 @@ function NewEpisode(props) {
 
   return (
     <>
-      <div style={{ paddingBottom: '5rem' }}>
+      <div style={{ paddingBottom: "5rem" }}>
         <Navbar />
       </div>
       <div
-        style={{ marginBottom: '5rem' }}
+        style={{ marginBottom: "5rem" }}
         className="create-episode-container"
       >
         <div
           style={{
-					  paddingTop: '0rem',
+            paddingTop: "0rem",
           }}
         >
-          <h1>Create Episode</h1>
+          <h1 style={{ color: theme.TEXT_COLOR_WHITE }}>Create Episode</h1>
         </div>
-        <div style={{ display: 'inline-block', width: '100%' }}>
+        <div style={{ display: "inline-block", width: "100%" }}>
           <Selected
-            color="black"
+            color={theme.TEXT_COLOR_WHITE}
             label="Choose Podcast"
             onChange={(e) => setpid(e.value)}
             value={selected.value}
@@ -160,9 +161,9 @@ function NewEpisode(props) {
         </div>
         <div className="edit-child">
           <TextInputLabel
-            color="black"
+            color={theme.TEXT_COLOR_WHITE}
             label="Episode Title"
-						// placeholder="Episode Title Here..."
+            // placeholder="Episode Title Here..."
             onChange={(e) => setTitle(e.target.value)}
           />
           {errorMsgTitle ? <ErrorMessage errorMsg={errorMsgTitle} /> : null}
@@ -179,28 +180,28 @@ function NewEpisode(props) {
         <ImageUpload label="Episode Artwork" />
         <div className="edit-child">
           <div
-            style={{ display: 'inline-block', width: '31%', marginRight: '2%' }}
+            style={{ display: "inline-block", width: "31%", marginRight: "2%" }}
           >
             <TextInputLabel
-              color="black"
+              color={theme.TEXT_COLOR_WHITE}
               label="Season # (Optional)"
-							// placeholder="Episode Title Here..."
+              // placeholder="Episode Title Here..."
               onChange={(e) => setSeason(e.target.value)}
             />
           </div>
           <div
-            style={{ display: 'inline-block', width: '31%', marginRight: '2%' }}
+            style={{ display: "inline-block", width: "31%", marginRight: "2%" }}
           >
             <TextInputLabel
-              color="black"
+              color={theme.TEXT_COLOR_WHITE}
               label="Episode # (Optional)"
-							// placeholder="Episode Title Here..."
+              // placeholder="Episode Title Here..."
               onChange={(e) => setEpisode(e.target.value)}
             />
           </div>
-          <div style={{ display: 'inline-block', width: '34%' }}>
+          <div style={{ display: "inline-block", width: "34%" }}>
             <Selected
-              color="black"
+              color={theme.TEXT_COLOR_WHITE}
               label="Episode Type (Optional)"
               onChange={(e) => setSelected(e.value)}
               value={selected.value}
@@ -224,7 +225,7 @@ function NewEpisode(props) {
 
           <div className="episode-submit-container">
             <PrimaryButton
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
               fx={submit}
               title="Submit"
             />

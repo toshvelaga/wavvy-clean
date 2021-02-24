@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './TagsInput.css';
+import React, { useState } from "react";
+import "./TagsInput.css";
 
 // Tags doc: https://codepen.io/prvnbist/pen/jJzROe?editors=0110
 
@@ -11,10 +11,10 @@ const TagsInput = (props) => {
   };
 
   const addTags = (event) => {
-    if (event.target.value !== '') {
+    if (event.target.value !== "") {
       setTags([...tags, event.target.value]);
       props.selectedTags([...tags, event.target.value]);
-      event.target.value = '';
+      event.target.value = "";
     }
   };
 
@@ -22,7 +22,7 @@ const TagsInput = (props) => {
     <>
       <div className="tags-input-container">
         <label
-          style={{ display: 'block', color: 'black' }}
+          style={{ display: "block", color: "#fff" }}
           className="label"
           htmlFor="fname"
         >
@@ -30,7 +30,7 @@ const TagsInput = (props) => {
         </label>
         <input
           type="text"
-          onKeyUp={(event) => (event.key === 'Enter' ? addTags(event) : null)}
+          onKeyUp={(event) => (event.key === "Enter" ? addTags(event) : null)}
           placeholder={props.placeholder}
         />
         <ul id="tags">
