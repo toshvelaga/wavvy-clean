@@ -1,5 +1,5 @@
 .create-podcast-container {
-  width: 50%;
+  width: 40%;
   margin: auto;
   margin-bottom: 4rem;
   padding: 20px;
@@ -28,7 +28,7 @@
 
 @media only screen and (max-width: 600px) {
   .create-podcast-container {
-    width: 90%;
+    width: 80%;
     margin: auto;
   }
 }

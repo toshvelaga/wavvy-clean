@@ -153,7 +153,11 @@ function EditWebsite() {
           label="TikTok"
         />
 
-        <PrimaryButton fx={submitSocialLink} title="Save" />
+        <PrimaryButton
+          style={{ width: "100%" }}
+          fx={submitSocialLink}
+          title="Save"
+        />
       </div>
 
       <div style={{ marginBottom: "4rem" }} className="edit-website-container">
@@ -194,7 +198,11 @@ function EditWebsite() {
           color={theme.TEXT_COLOR_WHITE}
           label="Stitcher"
         />
-        <PrimaryButton fx={submitSubscribeLink} title="Save" />
+        <PrimaryButton
+          style={{ width: "100%" }}
+          fx={submitSubscribeLink}
+          title="Save"
+        />
       </div>
 
       <div style={{ marginBottom: "5rem" }} className="edit-website-container">
@@ -217,7 +225,11 @@ function EditWebsite() {
           color={theme.TEXT_COLOR_WHITE}
           label="Bitcoin Wallet"
         />
-        <PrimaryButton fx={submitSupportLink} title="Save" />
+        <PrimaryButton
+          style={{ width: "100%" }}
+          fx={submitSupportLink}
+          title="Save"
+        />
       </div>
     </>
   );

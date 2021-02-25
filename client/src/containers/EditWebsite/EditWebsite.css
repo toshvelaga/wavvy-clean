@@ -1,5 +1,5 @@
 .edit-website-container {
-  width: 65%;
+  width: 45%;
   margin: auto;
   margin-bottom: 4rem;
   padding: 20px;
@@ -12,14 +12,14 @@
 
 @media only screen and (max-width: 1000px) {
   .edit-website-container {
-    width: 80%;
+    width: 60%;
     margin: auto;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .edit-website-container {
-    width: 90%;
+    width: 80%;
     margin: auto;
   }
 }

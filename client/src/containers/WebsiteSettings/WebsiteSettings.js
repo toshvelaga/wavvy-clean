@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import './WebsiteSettings.css';
-import WebsiteContainer from '../../components/WebsiteContainer/WebsiteContainer';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import "./WebsiteSettings.css";
+import WebsiteContainer from "../../components/WebsiteContainer/WebsiteContainer";
+import axios from "axios";
 
 function WebsiteSettings(props) {
   const [podcasts, setPodcasts] = useState([]);
@@ -11,17 +11,15 @@ function WebsiteSettings(props) {
 
   useEffect(() => {
     axios
-      .get('/api/get/podcasts', { headers })
+      .get("/api/get/podcasts", { headers })
       .then((res) => setPodcasts(res.data));
   }, []);
 
   return (
     <>
       <Navbar />
-      <br />
-      <br />
-      <br />
-      <h1 style={{ paddingBottom: '2rem' }} />
+
+      <h1 style={{ paddingBottom: "2rem" }} />
       <div className="website-settings">
         {podcasts.map((podcast) => (
           <WebsiteContainer
@@ -30,10 +28,10 @@ function WebsiteSettings(props) {
             coverImage={podcast.cover_artwork}
             podcastName={podcast.podcast_title}
             podcastDesc={
-							podcast.podcast_description.length > 150
-							  ? `${podcast.podcast_description.substring(0, 150)}...`
-							  : podcast.podcast_description
-						}
+              podcast.podcast_description.length > 150
+                ? `${podcast.podcast_description.substring(0, 150)}...`
+                : podcast.podcast_description
+            }
           />
         ))}
       </div>
