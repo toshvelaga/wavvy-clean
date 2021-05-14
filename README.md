@@ -14,8 +14,8 @@ Frontend tech stack:
 - CSS
 - Redux
 - React Router
-- React Icons
-- React Toast Notifications
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Toast Notifications](https://jossmac.github.io/react-toast-notifications/)
 
 Backend tech stack:
 
@@ -25,19 +25,15 @@ Backend tech stack:
 - Nodemailer
 - AWS SDK
 
-For more information on React Toast Notifications: https://jossmac.github.io/react-toast-notifications/
-
-React Icons: https://react-icons.github.io/react-icons/
-
 Frontend of the app is in the client folder. Under src directory store folder contains all of the redux actions and reducers. The website folder is responsible for building the landing page.
 
 Edit index.js to change the server connection. Middleware, routes, and utils directories contain server code for API endpoints.
 
 Hosted on Heroku: Folder structure is set up specifically to be compatible with Heroku
 
-Production site is deployed to https://www.wavvy.us/
+Production site is deployed to [wavvy.us](https://www.wavvy.us/) 
 
-Loom demo: https://www.loom.com/share/b46061898fc54d15870cd734b96886a6
+Here is a quick [Loom demo](https://www.loom.com/share/b46061898fc54d15870cd734b96886a6) 
 
 ## Installation
 
