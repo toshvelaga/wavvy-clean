@@ -6,6 +6,9 @@ Wavvy is a full stack software project that allows users to host podcasts. Softw
   <img src="https://voiceblasts1.s3.amazonaws.com/Screen+Shot+2021-02-14+at+10.55.07+AM.png">
 </span>
 
+<img width="812" alt="Screen Shot 2022-03-15 at 8 16 20 PM" src="https://user-images.githubusercontent.com/38474161/158503551-c6ea7fd3-2342-4556-8305-fc33ebda8748.png">
+
+
 ## Tech/framework used
 
 Frontend tech stack:
