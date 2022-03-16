@@ -1,6 +1,6 @@
 # Wavvy
 
-Wavvy is a full stack software project that allows users to host podcasts. Software allows users to manage their podcasts and episodes, create an RSS feed for itunes/spotify, and create a personalized website to share social media links. Software is in dark mode by default.
+Wavvy is a full stack software project that allows users to host podcasts. Software allows users to manage their podcasts and episodes, create an RSS feed for itunes/spotify, and create a personalized website to share social media links. Software is in dark mode by default. Check out our [Product Hunt Launch](https://www.producthunt.com/posts/wavvy) for more info.
 
 <span style="display:block" class="note">
   <img src="https://voiceblasts1.s3.amazonaws.com/Screen+Shot+2021-02-14+at+10.55.07+AM.png">
